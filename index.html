@@ -3,71 +3,338 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apna Family Restaurant</title>
+
+    <title>Spice & Soul | Restaurant</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+<!-- NAVBAR -->
 <header class="navbar">
 
-    <div class="logo">अपना FAMILY</div>
+    <a href="index.html" class="logo">
+        <span>🍽️</span> Spice<span>&</span>Soul
+    </a>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Menu</a>
-        <a href="#">Family</a>
-        <a href="#">Contact</a>
+    <nav id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
     </nav>
+
+    <div class="nav-actions">
+        <button id="themeBtn">🌙</button>
+
+        <button class="cart-btn" onclick="openCart()">
+            🛒 <span id="cartCount">0</span>
+        </button>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </div>
 
 </header>
 
+
+<!-- HERO -->
 <section class="hero">
 
-    <h1>स्वाद जो परिवार को जोड़े ❤️</h1>
+    <div class="hero-content">
 
-    <p>
-        Delicious Indian food, comfortable ambience
-        and unforgettable family moments.
-    </p>
+        <span class="badge">🔥 TODAY'S SPECIAL</span>
 
-    <a href="#" class="btn">Book a Table</a>
+        <h1>
+            Food that makes
+            <span>memories.</span>
+        </h1>
 
-</section>
+        <p>
+            Authentic flavours, modern vibes and unforgettable
+            dining experiences crafted specially for you.
+        </p>
 
-<section class="features">
+        <div class="hero-buttons">
 
-    <h2>Perfect For Everyone</h2>
+            <a href="menu.html" class="btn primary">
+                Explore Menu →
+            </a>
 
-    <div class="grid">
+            <button class="btn outline" onclick="openBooking()">
+                Book a Table
+            </button>
 
-        <div class="box">
-            <span>👨‍👩‍👧‍👦</span>
-            <h3>Family Dining</h3>
-            <p>Spacious seating for the whole family.</p>
         </div>
 
-        <div class="box">
-            <span>👶</span>
-            <h3>Kids Menu</h3>
-            <p>Tasty meals specially made for kids.</p>
+        <div class="stats">
+
+            <div>
+                <strong>4.9⭐</strong>
+                <small>Google Rating</small>
+            </div>
+
+            <div>
+                <strong>25K+</strong>
+                <small>Happy Guests</small>
+            </div>
+
+            <div>
+                <strong>15+</strong>
+                <small>Years Experience</small>
+            </div>
+
         </div>
 
-        <div class="box">
-            <span>🎉</span>
-            <h3>Celebrations</h3>
-            <p>Birthdays and special occasions.</p>
+    </div>
+
+
+    <div class="hero-food">
+
+        <div class="food-circle"></div>
+
+        <img
+            src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80"
+            alt="Delicious food"
+        >
+
+        <div class="floating-card">
+            <span>🔥</span>
+
+            <div>
+                <strong>Chef's Special</strong>
+                <small>Butter Chicken</small>
+            </div>
+
+            <b>₹349</b>
         </div>
 
     </div>
 
 </section>
 
-<section class="offer">
 
-    <h2>Family Combo ₹799</h2>
-    <p>2 Main Courses + 2 Breads + Rice + Dessert</p>
+<!-- CATEGORIES -->
+<section class="categories">
+
+    <div class="section-title">
+        <span>DISCOVER</span>
+        <h2>What are you craving?</h2>
+    </div>
+
+    <div class="category-grid">
+
+        <a href="menu.html?category=Indian" class="category">
+            <span>🍛</span>
+            <h3>Indian</h3>
+            <p>Authentic flavours</p>
+        </a>
+
+        <a href="menu.html?category=Pizza" class="category">
+            <span>🍕</span>
+            <h3>Pizza</h3>
+            <p>Hot & cheesy</p>
+        </a>
+
+        <a href="menu.html?category=Burger" class="category">
+            <span>🍔</span>
+            <h3>Burgers</h3>
+            <p>Big & juicy</p>
+        </a>
+
+        <a href="menu.html?category=Dessert" class="category">
+            <span>🍰</span>
+            <h3>Desserts</h3>
+            <p>Sweet endings</p>
+        </a>
+
+    </div>
 
 </section>
+
+
+<!-- OFFER -->
+<section class="offer">
+
+    <div>
+        <span>LIMITED TIME OFFER</span>
+
+        <h2>
+            Get 20% OFF
+            <br>
+            on your first order
+        </h2>
+
+        <p>
+            Use coupon code:
+            <strong>SOUL20</strong>
+        </p>
+    </div>
+
+    <div class="countdown">
+
+        <div>
+            <strong id="hours">00</strong>
+            <small>Hours</small>
+        </div>
+
+        <div>
+            <strong id="minutes">00</strong>
+            <small>Minutes</small>
+        </div>
+
+        <div>
+            <strong id="seconds">00</strong>
+            <small>Seconds</small>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <div class="about-image">
+        <img
+            src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=80"
+            alt="Restaurant interior"
+        >
+    </div>
+
+    <div class="about-text">
+
+        <span>OUR STORY</span>
+
+        <h2>
+            More than food,
+            <br>
+            it's an experience.
+        </h2>
+
+        <p>
+            Spice & Soul started with one simple idea:
+            bring people together over unforgettable food.
+            From traditional recipes to modern creations,
+            every dish is prepared with love.
+        </p>
+
+        <a href="#" class="text-link">
+            Discover our story →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<footer id="contact">
+
+    <div>
+        <h2>Spice<span>&</span>Soul</h2>
+        <p>
+            Great food. Great people.
+            Great memories.
+        </p>
+    </div>
+
+    <div>
+        <h3>Visit Us</h3>
+        <p>123 Food Street</p>
+        <p>Lucknow, India</p>
+    </div>
+
+    <div>
+        <h3>Opening Hours</h3>
+        <p>Mon - Sun</p>
+        <p>11:00 AM - 11:00 PM</p>
+    </div>
+
+</footer>
+
+
+<!-- CART -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+<aside class="cart" id="cart">
+
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button onclick="closeCart()">✕</button>
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-bottom">
+
+        <div>
+            <span>Total</span>
+            <strong id="cartTotal">₹0</strong>
+        </div>
+
+        <button class="btn primary" onclick="checkout()">
+            Checkout →
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- BOOKING MODAL -->
+<div class="modal" id="bookingModal">
+
+    <div class="modal-box">
+
+        <button class="close-modal" onclick="closeBooking()">✕</button>
+
+        <span>RESERVATION</span>
+
+        <h2>Book your table</h2>
+
+        <form id="bookingForm">
+
+            <input
+                type="text"
+                id="guestName"
+                placeholder="Your name"
+                required
+            >
+
+            <input
+                type="tel"
+                placeholder="Phone number"
+                required
+            >
+
+            <input
+                type="date"
+                required
+            >
+
+            <select required>
+                <option value="">Guests</option>
+                <option>1 Guest</option>
+                <option>2 Guests</option>
+                <option>3 Guests</option>
+                <option>4 Guests</option>
+                <option>5+ Guests</option>
+            </select>
+
+            <button class="btn primary" type="submit">
+                Confirm Booking
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
 
 </body>
 </html>
