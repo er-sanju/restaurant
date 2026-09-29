@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Menu | Spice & Soul</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        🍽️ Spice<span>&</span>Soul
+    </a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+
+        <button id="themeBtn">🌙</button>
+
+        <button class="cart-btn" onclick="openCart()">
+            🛒
+            <span id="cartCount">0</span>
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- MENU HERO -->
+
+<section class="menu-hero">
+
+    <div class="menu-hero-content">
+
+        <span>🍴 OUR MENU</span>
+
+        <h1>
+            Something delicious
+            <em>for everyone.</em>
+        </h1>
+
+        <p>
+            From spicy Indian classics to cheesy pizzas,
+            juicy burgers and sweet endings.
+        </p>
+
+    </div>
+
+    <div class="menu-hero-food">
+        <span>🔥</span>
+        <span>🍕</span>
+        <span>🍔</span>
+        <span>🍰</span>
+    </div>
+
+</section>
+
+
+<!-- MENU CONTROLS -->
+
+<section class="menu-section">
+
+    <div class="menu-toolbar">
+
+        <div class="search">
+
+            <span>⌕</span>
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search dishes..."
+            >
+
+        </div>
+
+
+        <select id="sortSelect">
+
+            <option value="default">
+                Sort by
+            </option>
+
+            <option value="low">
+                Price: Low to High
+            </option>
+
+            <option value="high">
+                Price: High to Low
+            </option>
+
+            <option value="rating">
+                Top Rated
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- CATEGORIES -->
+
+    <div class="category-tabs">
+
+        <button class="category-btn active"
+                data-category="All">
+            <span>✨</span>
+            All
+        </button>
+
+        <button class="category-btn"
+                data-category="Indian">
+            🍛 Indian
+        </button>
+
+        <button class="category-btn"
+                data-category="Pizza">
+            🍕 Pizza
+        </button>
+
+        <button class="category-btn"
+                data-category="Burger">
+            🍔 Burgers
+        </button>
+
+        <button class="category-btn"
+                data-category="Starter">
+            🥗 Starters
+        </button>
+
+        <button class="category-btn"
+                data-category="Dessert">
+            🍰 Desserts
+        </button>
+
+        <button class="category-btn"
+                data-category="Drinks">
+            🥤 Drinks
+        </button>
+
+    </div>
+
+
+    <!-- RESULTS -->
+
+    <div class="result-row">
+
+        <p>
+            Showing
+            <strong id="resultCount">0</strong>
+            dishes
+        </p>
+
+        <button
+            id="vegToggle"
+            class="veg-toggle"
+        >
+            🟢 Veg Only
+        </button>
+
+    </div>
+
+
+    <!-- FOOD GRID -->
+
+    <div
+        class="food-grid"
+        id="foodGrid"
+    ></div>
+
+
+    <!-- EMPTY -->
+
+    <div
+        class="empty-state"
+        id="emptyState"
+    >
+
+        <div>😔</div>
+
+        <h2>No dishes found</h2>
+
+        <p>
+            Try another search or category.
+        </p>
+
+        <button
+            class="clear-btn"
+            onclick="clearFilters()"
+        >
+            Clear Filters
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- CART OVERLAY -->
+
+<div
+    class="cart-overlay"
+    id="cartOverlay"
+    onclick="closeCart()"
+></div>
+
+
+<!-- CART -->
+
+<aside
+    class="cart"
+    id="cart"
+>
+
+    <div class="cart-header">
+
+        <div>
+            <span>YOUR ORDER</span>
+            <h2>My Cart</h2>
+        </div>
+
+        <button onclick="closeCart()">✕</button>
+
+    </div>
+
+
+    <div
+        class="cart-items"
+        id="cartItems"
+    ></div>
+
+
+    <div class="cart-footer">
+
+        <div class="coupon">
+
+            <input
+                id="couponInput"
+                placeholder="Coupon code"
+            >
+
+            <button onclick="applyCoupon()">
+                Apply
+            </button>
+
+        </div>
+
+        <div class="bill-row">
+            <span>Subtotal</span>
+            <strong id="subtotal">₹0</strong>
+        </div>
+
+        <div class="bill-row">
+            <span>Discount</span>
+            <strong id="discount">₹0</strong>
+        </div>
+
+        <div class="bill-row total">
+            <span>Total</span>
+            <strong id="total">₹0</strong>
+        </div>
+
+        <button
+            class="checkout-btn"
+            onclick="checkout()"
+        >
+            Proceed to Checkout →
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- TOAST -->
+
+<div
+    class="toast"
+    id="toast"
+>
+    Added to cart 🛒
+</div>
+
+
+<script src="menu.js"></script>
+
+</body>
+</html>
