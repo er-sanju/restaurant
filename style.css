@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff7ed;
+    color: #222;
+}
+
+.navbar {
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 900;
+    color: #ff4d00;
+}
+
+.logo span {
+    color: #222;
+}
+
+nav a {
+    text-decoration: none;
+    color: #222;
+    margin-left: 25px;
+}
+
+.hero {
+    min-height: 75vh;
+    padding: 70px 7%;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    background: #ffcf33;
+}
+
+.hero-text,
+.hero-image {
+    width: 50%;
+}
+
+.tag {
+    font-size: 13px;
+    font-weight: bold;
+    color: #ff4d00;
+}
+
+.hero h1 {
+    font-size: 70px;
+    line-height: .95;
+    margin: 20px 0;
+}
+
+.hero p {
+    font-size: 19px;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+.order-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 30px;
+    background: #ff4d00;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 30px;
+    transform: rotate(2deg);
+}
+
+.trending {
+    padding: 80px 7%;
+}
+
+.trending h2 {
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 45px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 18px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+.card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.card h3 {
+    margin: 18px 0 8px;
+    color: #ff4d00;
+}
+
+.card p {
+    margin-bottom: 15px;
+}
+
+@media (max-width: 700px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 60px 6%;
+    }
+
+    .hero-text,
+    .hero-image {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
